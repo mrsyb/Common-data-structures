@@ -7,6 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sort", "Sort", "{7A4F7E55-D
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SortAlgorithm", "SortAlgorithm\SortAlgorithm.vcxproj", "{93C35305-82D7-433E-84E6-28476DD20BCE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据结构概论", "数据结构概论", "{00083F13-91DB-475A-BEA7-329C1D1E7152}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "概念及笔记", "概念及笔记", "{B458C698-D265-477A-998B-A56D72102C23}"
+	ProjectSection(SolutionItems) = preProject
+		数据与数据结构.txt = 数据与数据结构.txt
+		Algorithm definition\算法定义.txt = Algorithm definition\算法定义.txt
+		算法效率度量.txt = 算法效率度量.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -29,6 +38,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{93C35305-82D7-433E-84E6-28476DD20BCE} = {7A4F7E55-DCFC-4ED8-B1B5-62850EE6CCDD}
+		{B458C698-D265-477A-998B-A56D72102C23} = {00083F13-91DB-475A-BEA7-329C1D1E7152}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B85B670F-EC18-464B-9386-C86EFE3EBFAE}
