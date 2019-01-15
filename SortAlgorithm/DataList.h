@@ -153,13 +153,11 @@ public:
 	friend class DataList<typename T>;
 #pragma region √∞≈›≈≈–Ú
 	void BubbleSort1(DataList<T> &V, int n);
-
 	void BubbleSort2(DataList<T> &V, int n);
 #pragma endregion
 	
 #pragma region ≤Â»Î≈≈–Ú
 	void InsertSort(DataList<T> &L, const int left, const int right);
-
 	void BinaryInsertSort(DataList<T> &L, const int left, const int right);
 #pragma endregion
 };
