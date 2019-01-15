@@ -3,6 +3,7 @@
 #include "iostream"
 #include "time.h"
 
+
 using namespace std;
 
 const int DefaultSize = 100;
