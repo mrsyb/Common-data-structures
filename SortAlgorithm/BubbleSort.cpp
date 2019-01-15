@@ -12,12 +12,10 @@
 template <class T>
 void Sort<T>::BubbleSort1(DataList<T> &V, int n) {
 	//对数组中n个元素进行冒泡排序，执行n-1趟，第i趟对地V[n-1]到V[i]起泡
-#pragma region timing
 	clock_t startTime, endTime;
 	startTime = clock();//开始计时
-#pragma endregion
 
-	for (int i = 1; i < n; i++) {
+	for (int i = 1; i < n; i++)
 		for (int j = n - 1; j >= i; j--)
 			if (V[j - 1] > V[j])
 			{
@@ -25,23 +23,20 @@ void Sort<T>::BubbleSort1(DataList<T> &V, int n) {
 				V[j - 1] = V[j];
 				V[j] = temp;
 			}
-	}
-		
-#pragma region print
+
 	V.MyPrint(true);
 	endTime = clock();//结束计时
 	cout << "BubbleSort1 run time is:" << (double)(endTime - startTime) / CLOCKS_PER_SEC << 's' << endl;
-#pragma endregion
 }
 template <class T>
 void Sort<T>::BubbleSort2(DataList<T> &V, int n) {
-#pragma region timing
-	clock_t startTime, endTime;
-	startTime = clock();//开始计时
-#pragma endregion
 	//设置交换标记exchange，如果本次冒泡没有发生交换，则说明排序完成，停止处理
 	bool exchange;
 	int i, j;
+	
+
+	clock_t startTime, endTime;
+	startTime = clock();//开始计时
 	
 	for (i = 1; i < n; i++) {
 		exchange = false;
@@ -65,11 +60,9 @@ void Sort<T>::BubbleSort2(DataList<T> &V, int n) {
 			return;
 		}
 	}
-#pragma region print
+	
 	V.MyPrint(true);
 	endTime = clock();//结束计时
 	cout << "BubbleSort2 run time is:" << (double)(endTime - startTime) / CLOCKS_PER_SEC << 's' << endl;
-#pragma endregion
-
 };
 
