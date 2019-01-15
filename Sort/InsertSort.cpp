@@ -22,15 +22,13 @@ template <class T>
 void Sort<T>::InsertSort(DataList<T> &L,const int left, const int right) {
 	//依次将元素L.Vector[left]按其排序码依次插入到有序表L.Vector[left],...,L.Vector[i-1]
 	//中，使得L.Vector[left]...Vector[i]有序
-#pragma region Timing
+	Element<T> temp; 
+	int i = left + 1, j;
+
 	clock_t startTime, endTime;
 	startTime = clock();//开始计时
-#pragma endregion 
 
-	Element<T> temp; 
-	int i, j;
-
-	for (i = left + 1; i < right; i++){
+	for (i; i < right; i++){
 		if (L[i] < L[i - 1]){
 			temp = L[i];
 			j = i - 1;
@@ -41,25 +39,21 @@ void Sort<T>::InsertSort(DataList<T> &L,const int left, const int right) {
 			L[j + 1] = temp;
 		}
 	}
-#pragma region print
+
 	L.MyPrint(true);
 	endTime = clock();//结束计时
 	cout << "InsertSort run time is:" << (double)(endTime - startTime) / CLOCKS_PER_SEC << 's' << endl;
-#pragma endregion 
-	
 };
 
 template <class T>
 void Sort<T>::BinaryInsertSort(DataList<T> &L, const int left, const int right){
-#pragma region Timing
+	Element<T> temp;
+	int i = left + 1, j, low, mid, hight;
+
 	clock_t startTime, endTime;
 	startTime = clock();//开始计时
-#pragma endregion 
 
-	Element<T> temp;
-	int i , j, low, mid, hight;
-
-	for (i = left + 1; i < right; i++){
+	for (i ; i < right; i++){
 		temp = L[i];
 		low = left;
 		hight = i - 1;
@@ -75,9 +69,7 @@ void Sort<T>::BinaryInsertSort(DataList<T> &L, const int left, const int right){
 		L[low] = temp;
 	}
 
-#pragma region print
 	L.MyPrint(true);
 	endTime = clock();//结束计时
 	cout << "BinaryInsertSort run time is:" << (double)(endTime - startTime) / CLOCKS_PER_SEC << 's' << endl;
-#pragma endregion 
 };
