@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "概念及笔记", "概念�
 		算法效率度量.txt = 算法效率度量.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinearList", "LinearList", "{FF77418C-8A28-4B57-9F4A-D7391CAFCD3A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinearList", "LinearList\LinearList.vcxproj", "{8A671255-DE10-4634-8E18-460C8891AC38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -32,6 +36,14 @@ Global
 		{93C35305-82D7-433E-84E6-28476DD20BCE}.Release|x64.Build.0 = Release|x64
 		{93C35305-82D7-433E-84E6-28476DD20BCE}.Release|x86.ActiveCfg = Release|Win32
 		{93C35305-82D7-433E-84E6-28476DD20BCE}.Release|x86.Build.0 = Release|Win32
+		{8A671255-DE10-4634-8E18-460C8891AC38}.Debug|x64.ActiveCfg = Debug|x64
+		{8A671255-DE10-4634-8E18-460C8891AC38}.Debug|x64.Build.0 = Debug|x64
+		{8A671255-DE10-4634-8E18-460C8891AC38}.Debug|x86.ActiveCfg = Debug|Win32
+		{8A671255-DE10-4634-8E18-460C8891AC38}.Debug|x86.Build.0 = Debug|Win32
+		{8A671255-DE10-4634-8E18-460C8891AC38}.Release|x64.ActiveCfg = Release|x64
+		{8A671255-DE10-4634-8E18-460C8891AC38}.Release|x64.Build.0 = Release|x64
+		{8A671255-DE10-4634-8E18-460C8891AC38}.Release|x86.ActiveCfg = Release|Win32
+		{8A671255-DE10-4634-8E18-460C8891AC38}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +51,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{93C35305-82D7-433E-84E6-28476DD20BCE} = {7A4F7E55-DCFC-4ED8-B1B5-62850EE6CCDD}
 		{B458C698-D265-477A-998B-A56D72102C23} = {00083F13-91DB-475A-BEA7-329C1D1E7152}
+		{8A671255-DE10-4634-8E18-460C8891AC38} = {FF77418C-8A28-4B57-9F4A-D7391CAFCD3A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B85B670F-EC18-464B-9386-C86EFE3EBFAE}
