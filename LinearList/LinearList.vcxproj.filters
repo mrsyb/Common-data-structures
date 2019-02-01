@@ -14,9 +14,21 @@
     <ClCompile Include="LinearList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="SeqList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinearList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SeqList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -107,7 +107,7 @@ public:
 
 	void randInitByInt()
 	{
-		srand(NULL);
+		srand(nullptr);
 		int i;
 		for (i = 0; i < this->Length(); i++)
 		{
