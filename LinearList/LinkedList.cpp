@@ -162,22 +162,22 @@ template<class T>
 void List<T>::InputRear(T endFlag)
 {
 	LinkedNode<T>* newNode;
-	LinkedNode<T>* head;
+	LinkedNode<T>* rear;
 	T var;
 	clear();
 	head = first;
 	std::cin >> var;
 	while (var!= endFlag)
 	{
-		newNode = new LinkedNode<T>(var);
+		newNode = new (std::nothrow)LinkedNode<T>(var);
 		if (newNode != nullptr)
 		{
-			head->link = newNode;
-			head = newNode;
+			rear->link = newNode;
+			rear = newNode;
 			std::cin >> var;
 		}
 	}
-	head->link = nullptr;
+	rear->link = nullptr;
 }
 
 template<class T>
