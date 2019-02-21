@@ -15,7 +15,7 @@ class LinkedStack :public Stack<T>
 {
 public:
 	LinkedStack():top(nullptr) {};
-	~LinkedStack(MakeEmpty(););
+	~LinkedStack() { MakeEmpty(); };
 	virtual void Push(const T& x) override;
 	virtual bool Pop(T& x) override;
 	virtual bool GetTop(T& x) const override;
