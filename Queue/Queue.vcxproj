@@ -116,11 +116,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="LinkedQuequ.h" />
+    <ClInclude Include="PQueue.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="SeqQueue.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LinkedQuequ.cpp" />
+    <ClCompile Include="PQueue.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="SeqQueue.cpp" />
   </ItemGroup>

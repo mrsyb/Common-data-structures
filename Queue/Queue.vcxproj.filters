@@ -24,6 +24,9 @@
     <ClInclude Include="LinkedQuequ.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="PQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SeqQueue.cpp">
@@ -33,6 +36,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="LinkedQuequ.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PQueue.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
