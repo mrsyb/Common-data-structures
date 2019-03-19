@@ -46,7 +46,45 @@ SparseMatrix<T> SparseMatrix<T>::Multiply(SparseMatrix<T>& b)
 template<class T>
 SparseMatrix<T> SparseMatrix<T>::Add(SparseMatrix<T>& b)
 {
-
+	SparseMatrix<T> Result(MaxTerms);
+	if (Rows != b.Rows || Cols != b.Cols)
+	{
+		cout << "Incompatible matrices!" << endl;//矩阵规格不一致
+		return Result;
+	}
+	int i = 0, j = 0, Index_a = 0, Index_b = 0,Result.Terms = 0;
+	while (i < Terms&&j < b.Terms)
+	{
+		Index_a = Cols * SmArry[i].Row + SmArry[i].Col;
+		Index_b = Cols * b.SmArry[j].Row + b.SmArry[j].Col;
+		if (Index_a < Index_b)//a在b之前
+		{
+			Result.SmArry[Result.Terms] = SmArry[i];
+			i++;
+		}
+		if (Index_a > Index_b)//a在b之后
+		{
+			Result.SmArry[Result.Terms] = b.SmArry[j];
+			j++;
+		}
+		else
+		{
+			Result.SmArry[Result.Terms] = SmArry[i];
+			Result.SmArry[Result.Terms].Value = SmArry[i].Value + b.SmArry[j].Value;
+			i++; j++;
+		}
+		Result.Terms++;
+	}
+	for (; i < Terms; i++)
+	{
+		Result.SmArry[Result.Terms] = SmArry[i];
+		Result.Terms++;
+	}
+	for (; j < Terms; j++)
+	{
+		Result.SmArry[Result.Terms] = b.SmArry[j];
+		Result.Terms++;
+	}
 }
 
 template<class T>
@@ -78,7 +116,40 @@ SparseMatrix<T> SparseMatrix<T>::Transpose()
 template<class T>
 SparseMatrix<T> SparseMatrix<T>::FastTranspose()
 {
+	int *RowSize = new int[Cols];//辅助数组，统计各列非零元素的个数
+	int *RowStart = new int[Cols];//辅助函数，预计各列转置后各行存放的位置
+	SparseMatrix<T> b(MaxTerms);
+	b.Rows = Rows; b.Cols = Cols; b.Terms = Terms;
+	if (Terms > 0)
+	{
+		int i, j;
+		for (i = 0; i < Cols; i++)
+		{
+			RowSize[i] = 0;//初始化
+		}
+		for (j = 0; j < Terms; j++)
+		{
+			RowSize[SmArry[i].Col]++;//各列非零元素的个数
+		}
+		RowStart[0] = 0;
+		for (i = 1; i < Cols; i++)
+		{
+			RowStart[i] = RowStart[i - 1] + RowSize[i - 1];
+		}
+		for (i = 0; i < Terms; i++)//从a向b传送
+		{
+			j = RowStart[SmArry[i].Col];//第i个非零元素在b中应放的位置
+			b.SmArry[j].Row = SmArry[i].Col;
+			b.SmArry[j].Col = SmArry[i].Row;
+			b.SmArry[j].Value = SmArry[i].Value;
+			RowStart[SmArry[i].Col]++;
+		}
 
+	}
+	delete[] RowSize;
+	delete[] RowStart;
+
+	return b;
 }
 
 template<class T>
