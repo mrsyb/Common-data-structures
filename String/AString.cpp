@@ -77,20 +77,23 @@ Astring & Astring::operator=(Astring& other)
 
 int Astring::Find(Astring& other, int k/*k=0*/) const
 {
-	int i, j;
-	if (k + other.CurLength > CurLength)
-		return -1;
-	for (i = k; i < k + other.CurLength; i++)
+	int i = k, j = 0;
+	while (i < CurLength && j < other.CurLength)
 	{
-		for (j = 0; j < other.CurLength; j++)
+		if (ch[i] == other.ch[j])
 		{
-			if (ch[i+j] != other.ch[j])
-			break;
+			++j;
+			++i;
 		}
-		if (j == other.CurLength)
-			return i;
+		else {
+			i = i - j + 1;
+			j = 0;
+		}
 	}
-
+	if (j == other.CurLength)
+	{
+		return i - j;
+	}
 	return -1;
 }
 
@@ -102,14 +105,14 @@ int Astring::KMPFind(Astring & other)
 	GetNext(other,next);
 	while (i < CurLength && k < other.CurLength) {
 
-		if (k == -1 || ch[i] == other.ch[k]) { // 当j为-1时，要移动的是i，当然j也要归0
+		if (k == -1 || ch[i] == other.ch[k]) { // 当k为-1时，要移动的是i，当然k也要归0
 			i++;
 			k++;
 		}
 		else {
 			// i不需要回溯了
 			// i = i - k + 1;
-			k = next[k]; // j回到指定位置
+			k = next[k]; // k回到指定位置
 		}
 	}
 	if (k == other.CurLength) {
@@ -135,7 +138,7 @@ void Astring::GetNext(Astring& other, int* Next)const
 		}
 		else
 		{
-			j = Next[k];
+			k = Next[k];
 		}
 
 	}
