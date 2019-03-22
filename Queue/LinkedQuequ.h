@@ -2,6 +2,8 @@
 #include "Queue.h"
 #include <iostream>
 
+#ifndef LINKEDNODE
+#define LINKEDNODE
 template<class T>
 struct LinkedNode
 {
@@ -10,6 +12,7 @@ struct LinkedNode
 	LinkedNode(LinkedNode<T> *ptr = nullptr) :link(ptr) {};
 	LinkedNode(const T& item, LinkedNode<T> *ptr = nullptr) :data(item), link(ptr) {}
 };
+#endif //!LINKEDNODE
 
 template<class T>
 class LinkedQuequ :public Queue<T>
