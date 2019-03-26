@@ -207,6 +207,7 @@ void BinaryTree<T>::NoRecuPostOrder(BinaryNode<T>* SubTree, void(*Visit)(BinaryN
 		}
 	}
 }
+
 template <class T>
 void BinaryTree<T>::NoRecuPreOrder2(BinaryNode<T>* SubTree, void(*Visit)(BinaryNode<T>* Current))
 {

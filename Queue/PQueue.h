@@ -1,13 +1,12 @@
 #pragma once
 #include "SeqQueue.h"
 
-int const MaxSize;
 template <class T>
 class PQueue 
 {
 public:
 	PQueue(int SZ = MaxSize);
-	~PQueue(delete[] PQElements;);
+	~PQueue() { delete[] PQElements; }
 	bool GetFront(T& x)const;
 	bool RemoveMin(T& x);
 	bool Insert(const T& x);
