@@ -1,5 +1,6 @@
 #pragma once
 #include "LinearList.h"
+#include <cstdlib>
 
 template <class T>
 struct CircLinkNode {
@@ -10,25 +11,24 @@ struct CircLinkNode {
 };
 
 template<class T>
-class CircList:public LinearList<T>
+class CircList
 {
 public:
-	CircList(const T& x):data(x);
+	CircList(CircLinkNode<T> first = NULL, CircLinkNode<T> last = NULL) :first(first), last(last) {}
 	CircList(CircLinkNode<T> &mLink);
-	~CircList();
+	~CircList() { MakeEmepty(); };
 	int Length()const;
 	void MakeEmepty();
-	bool IsEmpty{ return first->link == first ? true : false;}
-	CircLinkNode<T> * GetHead() const{ return first; }
-
-	SetHead(CircLinkNode<T>* head) { first = head; }
 	CircLinkNode<T>* Seach(T x);
 	CircLinkNode<T>* Locate(int i);
 	T GetData(int i);
-	void SetData(int i, T& d);
-	bool Insert(int i, const T& x);
-	bool Remove(int i, T&x);
+	void SetData(int i, T & d);
+	bool Insert(int i, const T & x);
+	bool Remove(int i, T & x);
+	bool IsEmpty{ return first->link == first ? true : false; }
+	CircLinkNode<T> * GetHead() const { return first; }
+	SetHead(CircLinkNode<T>* head) { first = head; }
 private:
-	CircLinkNode<T>* fist, *last;
-
-}
+	CircLinkNode<T>* first;
+	CircLinkNode<T>* last;
+};

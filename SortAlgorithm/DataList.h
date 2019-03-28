@@ -2,6 +2,7 @@
 #define DATELIST_H
 #include "iostream"
 #include "time.h"
+#include <cstdlib>
 
 
 using namespace std;
@@ -107,7 +108,7 @@ public:
 
 	void randInitByInt()
 	{
-		srand(nullptr);
+		srand(NULL);
 		int i;
 		for (i = 0; i < this->Length(); i++)
 		{

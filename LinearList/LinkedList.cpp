@@ -165,8 +165,8 @@ void List<T>::InputRear(T endFlag)
 	LinkedNode<T>* rear;
 	T var;
 	clear();
-	head = first;
 	std::cin >> var;
+	rear = first;
 	while (var!= endFlag)
 	{
 		newNode = new (std::nothrow)LinkedNode<T>(var);

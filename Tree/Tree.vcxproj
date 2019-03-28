@@ -116,11 +116,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="HuffmanTree.h" />
     <ClInclude Include="ThreadTree.h" />
     <ClInclude Include="Tree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BinaryTree.cpp" />
+    <ClCompile Include="HuffmanTree.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ThreadTree.cpp" />
   </ItemGroup>

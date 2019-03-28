@@ -1,5 +1,5 @@
 #pragma once
-const MaxSize = 50;
+const int MaxSize = 50;
 template <class T >
 struct SLinkNode
 {

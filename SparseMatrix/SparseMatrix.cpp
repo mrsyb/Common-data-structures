@@ -52,7 +52,8 @@ SparseMatrix<T> SparseMatrix<T>::Add(SparseMatrix<T>& b)
 		cout << "Incompatible matrices!" << endl;//矩阵规格不一致
 		return Result;
 	}
-	int i = 0, j = 0, Index_a = 0, Index_b = 0,Result.Terms = 0;
+	int i = 0, j = 0, Index_a = 0, Index_b = 0;
+	Result.Terms = 0;
 	while (i < Terms&&j < b.Terms)
 	{
 		Index_a = Cols * SmArry[i].Row + SmArry[i].Col;

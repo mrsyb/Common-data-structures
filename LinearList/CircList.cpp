@@ -1,18 +1,11 @@
 #include "CircList.h"
 
-template <class T>
-CircList<T>::~CircList()
-{
-	delete[] fist;
-	delete[] last;
-}
-
 template<class T>
 int CircList<T>::Length() const
 {
 	int i = 0;
-	CircLinkNode<T> p = fist->link;
-	while (p->link != fist)
+	CircLinkNode<T> p = this->first->link;
+	while (p->link != this->first)
 	{
 		i++;
 		p = p->link;
@@ -24,22 +17,22 @@ template<class T>
 void CircList<T>::MakeEmepty()
 {
 	CircLinkNode<T> p;
-	while (fist->link != fist)
+	while (this->first->link != this->first)
 	{
-		p = fist->link;
-		fist = p->link;
+		p = this->first->link;
+		this->first = p->link;
 		delete p;
 	}
 }
 
 template<class T>
-CircLinkNode<T>* Seach(T x)
+CircLinkNode<T>*  CircList<T>::Seach(T x)
 {
-	if (fist->link == first)
+	if (this->first->link == this->first)
 		return;
 
-	CircLinkNode<T>* p = frist->link;
-	while (p->link != fist)
+	CircLinkNode<T>* p = this->first->link;
+	while (p->link != this->first)
 	{
 		if (p->data == x)
 			return p;
@@ -49,14 +42,14 @@ CircLinkNode<T>* Seach(T x)
 }
 
 template<class T>
-CircLinkNode<T>* Locate(int i)
+CircLinkNode<T>* CircList<T>::Locate(int i)
 {
-	CircLinkNode<T>* p = frist;
+	CircLinkNode<T>* p = this->first;
 	int Index = 0;
 
-	if (i == 0) { return first; }
+	if (i == 0) { return this->first; }
 
-	while (p->link != fist)
+	while (p->link != this->first)
 	{
 		if (i == Index )
 			return p;
@@ -65,17 +58,17 @@ CircLinkNode<T>* Locate(int i)
 	return nullptr;
 }
 template<class T>
-T GetData(int i)
+T CircList<T>::GetData(int i)
 {
 	return Locate(i)->data;
 }
 template<class T>
-void SetData(int i, T & d)
+void CircList<T>::SetData(int i, T & d)
 {
 	d = Locate(i)->data;
 }
 template<class T>
-bool Insert(int i, const T & x)
+bool CircList<T>::Insert(int i, const T & x)
 {
 	CircLinkNode<T>* CurrentNode;
 	CircLinkNode<T>* NewNode = new CircLinkNode<T>(x);
@@ -90,7 +83,7 @@ bool Insert(int i, const T & x)
 	return false;
 }
 template<class T>
-bool Remove(int i, T & x)
+bool CircList<T>::Remove(int i, T & x)
 {
 	CircLinkNode<T>* CurrentNode;
 	CircLinkNode<T>* PreNode;
