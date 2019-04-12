@@ -116,9 +116,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="Graphlnk.h" />
     <ClInclude Include="Graphmtx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Graphlnk.cpp" />
     <ClCompile Include="Graphmtx.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

@@ -21,12 +21,18 @@
     <ClInclude Include="Graphmtx.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Graphlnk.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Graphmtx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphlnk.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

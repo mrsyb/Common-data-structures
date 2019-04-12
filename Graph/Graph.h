@@ -1,13 +1,13 @@
 #pragma once
 #include <cstdlib>
-const int DEfaultVetices = 30;
+const int DefaultVetices = 30;
 
 template<class T ,class E>
 class Graph
 {
 public:
 	const E MaxWeight = ......;
-	Graph(int SE = DEfaultVetices);
+	Graph(int SE = DefaultVetices);
 	~Graph();
 	bool GraphEmpty()const {
 		return NumEdgets == 0 ? true : false;
