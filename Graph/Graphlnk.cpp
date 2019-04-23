@@ -126,7 +126,56 @@ bool Graphlnk<T, E>::InsertEdge(int v1, int v2, E weight)
 template<class T, class E>
 bool Graphlnk<T, E>::RemoveVertice(int v)
 {
+	if(this->NumVertices == 1 || v < 0 || v >= this->NumVertices)
 	return false;
+
+	Edge<T, E>* p, *s, *t;
+	int i, k;
+
+	while (NodeTable[v].Head != NULL)
+	{
+		p = NodeTable[v].Head; k = p->Dest;
+		s = NodeTable[k].Head; t = NULL;
+
+		while (s != NULL && s->Dest != v)
+		{
+			t = s; 
+			s = s->Link;
+		}
+
+		if (s != NULL)
+		{
+			if (t == NULL)
+				NodeTable[k].Head = s->Link;
+			else
+				t->Link = s->Link;
+			delete s;
+		}
+		NodeTable[v].Head = p->Link;
+		delete p;
+		this->NumEdgets--;
+	}
+
+	this->NumVertices--;
+	NodeTable[v].Data = NodeTable[this->NumVertices].Data;
+	p = NodeTable[v].Head = NodeTable[this->NumVertices].Head;
+	while (p != NULL)
+	{
+		s = NodeTable[p->Dest];
+		while (s != NULL)
+		{
+			if (s->Dest == this->NumVertices)
+			{
+				s->Dest = v;
+				break;
+			}
+			else
+			{
+				s = s->Link;
+			}
+		}
+	}
+	return true;
 }
 
 template<class T, class E>
