@@ -35,5 +35,8 @@
     <ClCompile Include="Graphlnk.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
